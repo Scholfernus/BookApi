@@ -108,4 +108,14 @@ public class BookController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+
+    @DeleteMapping("del/{id}")
+    public ResponseEntity<List<BookModel>> deleteById(@PathVariable("id") Long id) {
+        try{
+            bookService.deleteBookById(id);
+            return ResponseEntity.noContent().build();
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST.ordinal()).build();
+        }
+    }
 }
