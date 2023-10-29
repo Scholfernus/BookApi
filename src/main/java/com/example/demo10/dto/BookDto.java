@@ -8,7 +8,7 @@ import lombok.Setter;
 @Setter
 @Data
 public class BookDto {
-private String title;
-private String author;
-private Integer publicationYear;
+    private String title;
+    private String author;
+    private Integer publicationYear;
 }
